@@ -7,9 +7,14 @@ import { RouterView } from 'vue-router'
     <div>
       <div>Hello World</div>
       <nav>
-        <RouterLink to="/success">Home</RouterLink>
-        <a href="/.auth/login/github?post_login_redirect_uri=https://yellow-bush-0f7a49603.5.azurestaticapps.net/success">Login GitHub</a>
-        <a href="/.auth/login/github?post_login_redirect_uri=https://yellow-bush-0f7a49603.5.azurestaticapps.net/success">Login AAD</a>
+        <ul>
+          <li>
+            <a href="/.auth/login/github?post_login_redirect_uri=https://yellow-bush-0f7a49603.5.azurestaticapps.net/success">Login GitHub</a>
+          </li>
+          <li>
+            <a href="/.auth/login/aad?post_login_redirect_uri=https://yellow-bush-0f7a49603.5.azurestaticapps.net/success">Login AAD</a>
+          </li>
+        </ul>       
       </nav>
     </div>
   </header>
