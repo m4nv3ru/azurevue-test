@@ -11,7 +11,7 @@ app.http('httpTrigger1', {
         } catch (error) {
             console.error(error);
             return {
-                status: 500,
+                status: 503,
                 body: { message: `${JSON.stringify(error.message)}` }
             };
         }
