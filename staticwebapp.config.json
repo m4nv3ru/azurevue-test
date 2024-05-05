@@ -4,6 +4,10 @@
     },
     "routes": [
         {
+            "route": "/success",
+            "allowedRoles": ["authenticated"]
+        },
+        {
             "route": "/api/*",
             "allowedRoles": ["authenticated"]
         }
