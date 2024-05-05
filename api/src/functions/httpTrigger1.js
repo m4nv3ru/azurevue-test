@@ -9,7 +9,7 @@ app.http('httpTrigger1', {
             const headerValue = request.headers.get('x-ms-client-principal');
             const encoded = Buffer.from(headerValue, 'base64');
             const decoded = encoded.toString('ascii');
-            return { status: 200,  body: JSON.stringify(decoded)};
+            return { status: 200,  body: decoded};
         } catch (error) {
             context.error(error);
             return {
