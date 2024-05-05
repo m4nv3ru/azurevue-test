@@ -6,12 +6,12 @@ app.http('httpTrigger1', {
     handler: async (request, context) => {
 
         try {
-            const header = req.headers.get('x-ms-client-principal');
-            const encoded = Buffer.from(header, 'base64');
+            const headerValue = request.headers.get('x-ms-client-principal');
+            const encoded = Buffer.from(headerValue, 'base64');
             const decoded = encoded.toString('ascii');
             return { status: 200,  body: JSON.stringify(decoded)};
         } catch (error) {
-            console.error(error);
+            context.error(error);
             return {
                 status: 500,
                 body: JSON.stringify(error.message)
