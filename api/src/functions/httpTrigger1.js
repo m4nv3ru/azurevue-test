@@ -10,7 +10,7 @@ app.http('httpTrigger1', {
         } catch (error) {
             return {
                 status: 500,
-                body: { message: error.message }
+                body: { message: `${error.message}` }
             };
         }
         
