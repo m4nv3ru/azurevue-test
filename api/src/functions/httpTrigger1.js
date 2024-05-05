@@ -6,7 +6,7 @@ app.http('httpTrigger1', {
     handler: async (request, context) => {
         try {
             const result = await fetch("/.auth/me");
-            const payload = await response.json();
+            const payload = await result.json();
             return { status: 200,  body: JSON.stringify(payload)};
         } catch (error) {
             console.error(error);
