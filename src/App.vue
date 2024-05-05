@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+
+const callApi = () => {
+    console.log('Calling API');
+    fetch('/api/httpTrigger1')
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
+};
+
 </script>
 
 <template>
@@ -19,6 +27,9 @@ import { RouterView } from 'vue-router'
     </div>
   </header>
   <main>
+    <div>
+      <button @click="() => callApi()">Call API</button>
+    </div>
     <RouterView />
   </main>
 </template>
