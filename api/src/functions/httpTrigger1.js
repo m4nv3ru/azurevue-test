@@ -12,7 +12,7 @@ app.http('httpTrigger1', {
             console.error(error);
             return {
                 status: 503,
-                body: JSON.stringify(jsonData)
+                body: JSON.stringify(error)
             };
         }
 
