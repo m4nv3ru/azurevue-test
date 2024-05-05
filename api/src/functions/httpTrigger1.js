@@ -7,12 +7,12 @@ app.http('httpTrigger1', {
         try {
             const result = await fetch("/.auth/me");
             const payload = await response.json();
-            return { status: 200,  body: { message: JSON.stringify(payload) } };
+            return { status: 200,  body: JSON.stringify(payload)};
         } catch (error) {
             console.error(error);
             return {
                 status: 503,
-                body: { message: `${JSON.stringify(error.message)}` }
+                body: JSON.stringify(jsonData)
             };
         }
 
