@@ -5,12 +5,12 @@ app.http('httpTrigger1', {
     authLevel: 'anonymous',
     handler: async (request, context) => {
         try {
-            const result = await (await fetch("./auth/me")).json();
-            return { body: JSON.stringify(result) };
+            const result = await fetch("/./auth/me");            
+            return { body: await result.text() };
         } catch (error) {
             return {
                 status: 500,
-                body: { message: `${error.message}` }
+                body: { message: `${JSON.stringify(error.message)}` }
             };
         }
         
