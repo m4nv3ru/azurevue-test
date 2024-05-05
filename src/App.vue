@@ -4,8 +4,12 @@ import { RouterView } from 'vue-router'
 const callApi = () => {
     console.log('Calling API');
     fetch('/api/httpTrigger1')
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
+        .then(response => {
+          console.log(response);
+          response.json().then(data => {
+            console.log(data);
+          }).catch(error => console.error(error));
+        }).catch(error => console.error(error));
 };
 
 </script>
